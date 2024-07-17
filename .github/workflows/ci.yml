@@ -25,10 +25,10 @@ jobs:
         run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
 
       - name: Build docker image
-        run: docker build -t integrationninjas/springboot-example .
+        run: docker build -t nandkumarmohite/my-first-docker-repository
 
       - name: Publish image to docker hub
-        run: docker push integrationninjas/springboot-example:latest
+        run: docker push nandkumarmohite/my-first-docker-repository:latest
 
   deploy:
     needs: build
@@ -36,10 +36,10 @@ jobs:
 
     steps:
       - name: Pull Image from docker hub
-        run: docker pull integrationninjas/springboot-example:latest
+        run: docker pull nandkumarmohite/my-first-docker-repository:latest
 
       - name: Delete old container
         run: docker rm -f springboot-example-container
 
       - name: Run docker container
-        run: docker run -d -p 8080:8080 --name springboot-example-container integrationninjas/springboot-example
+        run: docker run -d -p 8080:8080 --name springboot-example-container nandkumarmohite/my-first-docker-repository
