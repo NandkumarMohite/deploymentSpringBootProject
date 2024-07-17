@@ -32,7 +32,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest  # Use appropriate OS
+    runs-on: aws-ec2 # Use appropriate OS
 
     steps:
       - name: Checkout Repository
