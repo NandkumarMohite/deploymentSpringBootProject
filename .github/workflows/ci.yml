@@ -25,7 +25,7 @@ jobs:
         run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
 
       - name: Build docker image
-        run: docker build -t nandkumarmohite/my-first-docker-repository
+        run: docker build -t nandkumarmohite/my-first-docker-repository .
 
       - name: Publish image to docker hub
         run: docker push nandkumarmohite/my-first-docker-repository:latest
