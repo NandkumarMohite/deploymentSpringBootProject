@@ -31,15 +31,18 @@ jobs:
         run: docker push nandkumarmohite/my-first-docker-repository:latest
 
   deploy:
-    needs: build
+
     runs-on: aws-ec2
 
     steps:
-      - name: Pull Image from docker hub
+      - name: Pull Image from Docker Hub
         run: docker pull nandkumarmohite/my-first-docker-repository:latest
 
-      - name: Delete old container
-        run: docker rm -f springboot-example-container
+      - name: Stop and Remove Old Container
+        run: |
+          docker stop springboot-example-container || true
+          docker rm springboot-example-container || true
 
-      - name: Run docker container
-        run: docker run -d -p 8080:8080 --name springboot-example-container nandkumarmohite/my-first-docker-repository
+      - name: Run Docker Container
+        run: |
+          docker run -d -p 8080:8080 --name springboot-example-container nandkumarmohite/my-first-docker-repository
