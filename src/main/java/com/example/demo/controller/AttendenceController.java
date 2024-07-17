@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -9,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/attendence")
+// @CrossOrigin("https://44.203.138.109:8080")
 public class AttendenceController {
 
 
-	@GetMapping("/signin")
-	public String signup(@PathVariable("id") int id) { 
+	@GetMapping()
+	public String signup() { 
 		return "sign Up done";
 	}
 	
