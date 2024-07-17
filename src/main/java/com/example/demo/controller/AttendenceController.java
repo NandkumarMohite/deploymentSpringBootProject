@@ -9,12 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/attendence")
 public class AttendenceController {
 
 
-	@GetMapping("/signin")
-	public String signup(@PathVariable("id") int id) { 
+	@GetMapping()
+	public String signup() { 
 		return "sign Up done";
 	}
 	
