@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin("https://44.203.138.109:8080")
+// @CrossOrigin("https://44.203.138.109:8080")
 public class AttendenceController {
 
 
