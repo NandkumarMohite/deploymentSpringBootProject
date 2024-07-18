@@ -86,7 +86,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>springboot-example.jar</finalName>
+		<finalName>springboot-example</finalName>
 	</build>
 
 </project>
